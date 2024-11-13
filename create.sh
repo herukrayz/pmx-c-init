@@ -9,4 +9,7 @@ qm set $1 --scsihw virtio-scsi-pci --scsi0 $3:vm-$1-disk-0
 qm set $1 --ide0 $3:cloudinit
 qm set $1 --boot c --bootdisk scsi0
 qm set $1 --serial0 socket --vga serial0
+qm set $1 --ostype l26
+qm set $1 --tablet 0
+qm set $1 --agent enabled=1,fstrim_cloned_disks=1
 qm template $1
